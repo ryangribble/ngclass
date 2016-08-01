@@ -1,5 +1,22 @@
 <div>
     <h1>{{message}}</h1>
 
-    <button (click)="changeMessage()">Change the message</button>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Length</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let movie of movies">
+            <td [style.color]="rateMovie(movie)">{{movie.title}}</td>
+            <td>{{movie.length}}</td>
+            <td>{{movie.rating}}</td>
+            <td>
+                <button (click)="movie.decreaseRating()">-</button>
+                <button (click)="movie.increaseRating()">+</button>
+            </td>
+        </tr>
+    </table>
 </div>

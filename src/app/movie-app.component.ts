@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {MovieData} from "./services/movies.service";
+import {Movie} from "./models/movie";
 
 @Component({
     templateUrl: "./movie-app.component.html",
@@ -6,12 +8,19 @@ import {Component} from "@angular/core";
 })
 export class MovieAppComponent {
 
-    message: string;
-    constructor() {
-        this.message = "Hello, from MovieAppComponent";
+    movies: Movie[] = [];
+
+    constructor(private movieData: MovieData) {
+        this.movies = movieData.getAll();
     }
 
-    changeMessage() {
-        this.message = "This is a new message";
+    rateMovie(movie: Movie) {
+        let result = "#000000";
+        if (movie.rating > 4) {
+            result = "#00ff00";
+        } else if (movie.rating < 2) {
+            result = "#ff0000";
+        }
+        return result;
     }
 }
