@@ -14,7 +14,7 @@ const routes: RouterConfig = [
       component: MovieAboutComponent,
       children: aboutRoutes },
     { path: "detail/:id", component: MovieDetailComponent },
-    { path: "**", redirectTo: ""}
+    { path: "**", redirectTo: "" }
 ];
 
 export const APP_ROUTE_PROVIDERS = provideRouter(routes);
