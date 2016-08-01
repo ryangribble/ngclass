@@ -1,26 +1,29 @@
 <div class="container">
-    <h1>{{message}}</h1>
+    <!--<h1>{{message}}</h1>-->
 
-    <table class="table">
-        <tr>
-            <th>Title</th>
-            <th>Length</th>
-            <th>Rating</th>
-            <th></th>
-        </tr>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{message}}</a>
+            </div>
 
-        <tr *ngFor="let movie of movies">
-            <td [ngClass]="rateMovie(movie)">{{movie.title}}</td>
-            <td>{{movie.length}}</td>
-            <td>{{movie.rating}}</td>
-            <td>
-                <button class="btn btn-default" (click)="movie.decreaseRating()">
-                    <i class="glyphicon glyphicon-minus"></i>
-                </button>
-                <button class="btn btn-default" (click)="movie.increaseRating()">
-                    <i class="glyphicon glyphicon-plus"></i>                 
-                </button>
-            </td>
-        </tr>
-    </table>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['']">List</a></li>
+                <li><a [routerLink]="['about', 'phone']">About</a></li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <router-outlet></router-outlet>
+    
 </div>

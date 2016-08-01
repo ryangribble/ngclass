@@ -16,4 +16,8 @@ export class MovieData {
     getAll() {
         return this.movies;
     }
+
+    getById(id: number) {
+        return this.movies.find(m => m.id === id);
+    }
 }
