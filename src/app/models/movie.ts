@@ -7,19 +7,19 @@ export class Movie {
         public rating: number) {
         }
 
-        increaseRating() {
-            if (this.rating < 5) {
-                this.rating += 1;
-            } else {
-                this.rating = 1;
-            }
+    increaseRating() {
+        if (this.rating < 5) {
+            this.rating += 1;
+        } else {
+            this.rating = 1;
         }
+    }
 
-        decreaseRating() {
-            if (this.rating > 1) {
-                this.rating -= 1;
-            } else {
-                this.rating = 5;
-            }
+    decreaseRating() {
+        if (this.rating > 1) {
+            this.rating -= 1;
+        } else {
+            this.rating = 5;
         }
+    }
 }
