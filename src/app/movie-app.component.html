@@ -1,7 +1,7 @@
-<div>
+<div class="container">
     <h1>{{message}}</h1>
 
-    <table>
+    <table class="table">
         <tr>
             <th>Title</th>
             <th>Length</th>
@@ -10,12 +10,12 @@
         </tr>
 
         <tr *ngFor="let movie of movies">
-            <td [style.color]="rateMovie(movie)">{{movie.title}}</td>
+            <td [ngClass]="rateMovie(movie)">{{movie.title}}</td>
             <td>{{movie.length}}</td>
             <td>{{movie.rating}}</td>
             <td>
-                <button (click)="movie.decreaseRating()">-</button>
-                <button (click)="movie.increaseRating()">+</button>
+                <button class="btn btn-default" (click)="movie.decreaseRating()">-</button>
+                <button class="btn btn-default" (click)="movie.increaseRating()">+</button>
             </td>
         </tr>
     </table>

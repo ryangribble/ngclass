@@ -8,6 +8,7 @@ import {Movie} from "./models/movie";
 })
 export class MovieAppComponent {
 
+    message: string = "At the movies";
     movies: Movie[] = [];
 
     constructor(private movieData: MovieData) {
@@ -15,12 +16,17 @@ export class MovieAppComponent {
     }
 
     rateMovie(movie: Movie) {
-        let result = "#000000";
+        const result = {
+            good: false,
+            bad: false
+        };
+
         if (movie.rating > 4) {
-            result = "#00ff00";
+            result.good = true;
         } else if (movie.rating < 2) {
-            result = "#ff0000";
+            result.bad = true;
         }
+
         return result;
     }
 }
