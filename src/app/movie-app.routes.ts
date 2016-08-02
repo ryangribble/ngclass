@@ -2,6 +2,9 @@ import {RouterConfig, provideRouter} from "@angular/router";
 import {MovieListComponent} from "./list/movie-list.component";
 import {MovieAboutComponent} from "./about/movie-about.component";
 import {MovieDetailComponent} from "./detail/movie-detail.component";
+import {MovieEditComponent} from "./edit/movie-edit.component";
+import {MovieNewTemplateComponent} from "./new/movie-new.component-template";
+import {MovieNewModelComponent} from "./new/movie-new.component-model";
 import {aboutRoutes} from "./about/movie-about.routes";
 
 // / -> display a list of movies
@@ -14,6 +17,9 @@ const routes: RouterConfig = [
       component: MovieAboutComponent,
       children: aboutRoutes },
     { path: "detail/:id", component: MovieDetailComponent },
+    { path: "edit/:id", component: MovieEditComponent },
+    { path: "new1", component: MovieNewTemplateComponent },
+    { path: "new2", component: MovieNewModelComponent },
     { path: "**", redirectTo: "" }
 ];
 

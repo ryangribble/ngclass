@@ -1,5 +1,8 @@
 // styles in src/style directory are applied to the whole page
 
+.ng-touched.ng-invalid {
+    border-left: 5px red solid; 
+}
 .good {
     color: green;
 }

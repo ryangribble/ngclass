@@ -17,9 +17,17 @@
             <button class="btn btn-default" (click)="movie.increaseRating()">
                 <i class="glyphicon glyphicon-plus"></i>                 
             </button>
+            
+            <a [routerLink]="['edit', movie.id]" class="btn btn-default">
+                <i class="glyphicon glyphicon-edit" ></i>
+            </a>
+
             <a (click)="goToMovie(movie.id)" class="btn btn-default">
                 <i class="glyphicon glyphicon-zoom-in"></i>
             </a>
         </td>
     </tr>
 </table>
+
+<a [routerLink]="['new1']" class="btn btn-default">Create a Movie (Template)</a>
+<a [routerLink]="['new2']" class="btn btn-default">Create a Movie (Model)</a>
