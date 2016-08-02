@@ -4,9 +4,7 @@
     </div>
     <div class="panel-body">
         {{movie.length}}
-        <div [ngClass]="rateMovie(movie)">{{movie.title}}>
-            {{movie.rating}}
-        </div>
+        <div [ngClass]="rateMovie(movie)">{{movie.rating}}</div>
     </div>
     <div class="panel-footer">
         <button class="btn btn-default" (click)="movie.decreaseRating()">
