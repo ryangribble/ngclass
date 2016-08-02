@@ -1,12 +1,11 @@
 import {Component} from "@angular/core";
-import {NgForm, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
+import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Movie} from "../models/movie";
 import {MovieData} from "../services/movies.service";
 
 @Component({
-    templateUrl: "./movie-new.component-template.html",
-    directives: REACTIVE_FORM_DIRECTIVES
+    templateUrl: "./movie-new.component-template.html"
 })
 export class MovieNewTemplateComponent {
     movie: Movie = new Movie(0, "", 100, 3);
