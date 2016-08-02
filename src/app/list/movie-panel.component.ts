@@ -4,7 +4,7 @@ import {Movie} from "../models/movie";
 
 @Component({
     selector: "movie-panel",
-    templateUrl: "./movie-panel.component",
+    templateUrl: "./movie-panel.component.html",
     directives: [ROUTER_DIRECTIVES]
 })
 export class MoviePanelComponent {
