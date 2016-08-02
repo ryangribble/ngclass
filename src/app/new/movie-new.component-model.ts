@@ -1,11 +1,12 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
-import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Validators} from "@angular/forms";
 import {Movie} from "../models/movie";
 import {MovieData} from "../services/movies.service";
 
 @Component({
-    templateUrl: "./movie-new.component-model.html"
+    templateUrl: "./movie-new.component-model.html",
+    directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class MovieNewModelComponent {
     title: FormControl;
@@ -15,8 +16,8 @@ export class MovieNewModelComponent {
 
     constructor(private router: Router, private movieData: MovieData) {
         this.title = new FormControl("", Validators.required);
-        this.rating = new FormControl();
-        this.length = new FormControl();
+        this.rating = new FormControl(2);
+        this.length = new FormControl(50);
         this.form = new FormGroup({
             title: this.title,
             length: this.length,

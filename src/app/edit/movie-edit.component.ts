@@ -1,11 +1,12 @@
 import {Component, OnInit} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
-import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Validators} from "@angular/forms";
 import {MovieData} from "../services/movies.service";
 import {Movie} from "../models/movie";
 
 @Component({
-    templateUrl: "./movie-edit.component.html"
+    templateUrl: "./movie-edit.component.html",
+    directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class MovieEditComponent implements OnInit {
     title: FormControl;
