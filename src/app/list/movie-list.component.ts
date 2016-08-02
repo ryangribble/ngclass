@@ -21,4 +21,8 @@ export class MovieListComponent implements OnInit {
         .subscribe(movies => this.movies = movies,
                    error => console.log(error));
     }
+
+    goToMovie(id: number) {
+        this.router.navigate(["detail", id]);
+    }
 }
